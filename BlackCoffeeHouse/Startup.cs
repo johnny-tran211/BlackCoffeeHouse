@@ -1,8 +1,10 @@
+using BlackCoffeeHouse.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -27,6 +29,9 @@ namespace BlackCoffeeHouse
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+            services.AddSingleton(Configuration);
+            services.AddDbContext<AmazingStoreDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DevConnection")), ServiceLifetime.Scoped);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

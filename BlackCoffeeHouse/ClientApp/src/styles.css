@@ -1,1 +1,76 @@
 /* You can add global styles to this file, and also import other style files */
+
+body,
+html {
+  background: #f4f6f8;
+}
+.loader {
+  border: 3px solid #d6336c;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+  left: 855px;
+  top: 350px;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  animation: rotate 2s cubic-bezier(0.26, 1.36, 0.74, -0.29) infinite;
+}
+#loader2 {
+  border: 3px solid #3bc9db;
+  width: 220px;
+  height: 220px;
+  position: relative;
+  top: 140px;
+  left: 850px;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  animation: rotate2 2s cubic-bezier(0.26, 1.36, 0.74, -0.29) infinite;
+}
+#loader3 {
+  border: 3px solid #d6336c;
+  width: 240px;
+  height: 240px;
+  position: relative;
+  top: -90px;
+  left: 840px;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  animation: rotate 2s cubic-bezier(0.26, 1.36, 0.74, -0.29) infinite;
+}
+#loader4 {
+  padding: 150px 0 0 150px;
+  border: 3px solid #3bc9db;
+  width: 260px;
+  height: 260px;
+  position: relative;
+  top: -345px;
+  left: 830px;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  animation: rotate2 2s cubic-bezier(0.26, 1.36, 0.74, -0.29) infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotateZ(-360deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+@keyframes rotate2 {
+  0% {
+    transform: rotateZ(360deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+#text {
+  color: #a1a1a1;
+  font-family: Arial;
+  font-size: 20px;
+  position: relative;
+  top: -475px;
+  left: 850px;
+}

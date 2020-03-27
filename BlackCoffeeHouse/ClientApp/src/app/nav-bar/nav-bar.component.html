@@ -1,0 +1,40 @@
+<!-- <header>
+  <button (click)="auth.login()" *ngIf="!auth.loggedIn">Log In</button>
+  <button (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out</button>
+</header> -->
+<div class="sidebar">
+  <div class="profile" *ngIf="auth.getUser() != null">
+    <div class="avatar">
+      <img src="{{ auth.getUser().picture }}" />
+    </div>
+  </div>
+  <p>{{ auth.getUser().name }}</p>
+  <button 
+    routerLinkActive="active" 
+    [routerLink]="['/home']" 
+    class="sub-sidebar">
+     Home
+</button>
+  <button 
+    (click)="auth.login()" 
+    *ngIf="!auth.getLoggedIn()" 
+    routerLinkActive="active" 
+    class="sub-sidebar">
+    
+    Log In
+</button>
+  <button 
+    routerLinkActive="active" 
+    [routerLink]="['/profile']" 
+    class="sub-sidebar" 
+    *ngIf="auth.getLoggedIn()">
+    Profile
+</button>
+  <button 
+    (click)="auth.logout()" 
+    *ngIf="auth.getLoggedIn()" 
+    routerLinkActive="active" 
+    class="sub-sidebar">
+    Log Out
+</button>
+</div>

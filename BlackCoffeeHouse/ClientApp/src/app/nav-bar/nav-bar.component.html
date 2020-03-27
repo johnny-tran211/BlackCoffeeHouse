@@ -3,7 +3,7 @@
   <button (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out</button>
 </header> -->
 <div class="sidebar">
-  <div class="profile" *ngIf="auth.getUser() != null">
+  <div class="profile" *ngIf="auth.getUser() != false">
     <div class="avatar">
       <img src="{{ auth.getUser().picture }}" />
     </div>
